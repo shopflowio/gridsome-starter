@@ -1,1 +1,1 @@
-# Teagels Website Starters
+# Teagles Website Starters
