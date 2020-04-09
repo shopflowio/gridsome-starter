@@ -7,13 +7,20 @@
 module.exports = {
   siteName: "Gridsome",
   plugins: [
+    "gridsome-plugin-pug",
+    {
+      use: "gridsome-source-static-meta",
+      options: {
+        path: "site.config.json",
+      },
+    },
     {
       use: "@gridsome/vue-remark",
       options: {
         typeName: "ContentPage",
         baseDir: "./content/pages",
-        template: './src/templates/ContentPage.vue'
-      }
-    }
-  ]
+        template: "./src/templates/ContentPage.vue",
+      },
+    },
+  ],
 }

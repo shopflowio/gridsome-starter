@@ -1,50 +1,46 @@
-<template>
-  <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
-    <slot/>
-  </div>
+<template lang="pug">
+  div.layout
+    nav.navbar.no-print.has-shadow
+      div.container
+        div.navbar-brand
+          g-link(to="/").navbar-item
+            g-image(src="~/images/logo.png" width="400" height="28" fit="inside" :immediate="true" :alt="$static.metadata.siteName")
+
+          a.navbar-burger(@click="$state.navbarIsActive = !$state.navbarIsActive")
+            span
+            span
+            span
+
+        div.navbar-menu
+          div.navbar-start
+            //- g-link(to="/" active-class="is-active" exact).navbar-item.is-tab Home
+
+          div.navbar-end
+            template(v-for="(item, index) in $static.metadata.headerNavigation")
+              a(
+                v-if="item.external"
+                :href="item.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="animated-link"
+              ).navbar-item.is-tab {{ item.text }}
+              g-link(v-else :to="item.link").navbar-item.is-tab {{ item.text }}
+
+    div.main.container.section
+      slot
+
+    footer.has-text-centered
 </template>
 
 <static-query>
 query {
   metadata {
     siteName
+    headerNavigation : headerNavigation {
+      text
+      link
+      external
+    }
   }
 }
 </static-query>
-
-<style>
-body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-}
-
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
-}
-</style>
