@@ -11,7 +11,8 @@ module.exports = {
       use: "@gridsome/vue-remark",
       options: {
         typeName: "ContentPage",
-        baseDir: "./content/pages"
+        baseDir: "./content/pages",
+        template: './src/templates/ContentPage.vue'
       }
     }
   ]
