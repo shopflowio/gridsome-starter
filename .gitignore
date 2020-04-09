@@ -33,7 +33,6 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -56,6 +55,14 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.*
 
 # next.js build output
 .next
+
+# other stuff
+.cache
+.DS_Store
+src/.temp
+dist
+node_modules
