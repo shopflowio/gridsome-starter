@@ -1,14 +1,20 @@
-.r-1 { border-radius: 1px; }
-.r-2 { border-radius: 2px; }
-.r-3 { border-radius: 3px; }
-.r-4 { border-radius: 4px; }
-
 .has-shadow { box-shadow: $default-shadow; }
 
 .has-equal-height {
    display: flex;
    flex-direction: column;
    height: 100%;
+}
+
+img.is-pulled-left {
+  margin: 0.25rem 1rem 1rem 0;
+  // padding-top: 0.25rem;
+  // margin-right: 1rem;
+  // margin-bottom: 1rem;
+}
+
+img.is-pulled-right {
+  margin: 0.25rem 0 1rem 1rem;
 }
 
 // margin and padding values array
@@ -67,6 +73,11 @@ $space-prefixes : (
 .is-10rem-wide { width: 10rem !important; }
 .is-25rem-wide { width: 25rem !important; }
 .is-50rem-wide { width: 50rem !important; }
+
+.r-1 { border-radius: 1px; }
+.r-2 { border-radius: 2px; }
+.r-3 { border-radius: 3px; }
+.r-4 { border-radius: 4px; }
 
 .z-index-1 {
   z-index: 1 !important;

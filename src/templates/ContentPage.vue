@@ -1,5 +1,5 @@
 <template lang="pug">
   Layout
-    VueRemarkContent
+    VueRemarkContent.content
       slot
 </template>
