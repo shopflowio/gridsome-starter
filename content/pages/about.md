@@ -2,5 +2,4 @@
 title: 'About'
 published: true
 ---
-
-About us!
+Placeholder for the about page

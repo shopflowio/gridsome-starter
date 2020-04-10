@@ -1,6 +1,5 @@
 ---
-title: 'Indez'
-published: true
+title: 'Index'
 ---
 
-INDEX!
+Home Page
