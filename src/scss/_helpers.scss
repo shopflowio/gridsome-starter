@@ -1,3 +1,4 @@
+$default-shadow: 0 2px 3px rgba(black, 0.1), 0 0 0 1px rgba(black, 0.1) !default;
 .has-shadow { box-shadow: $default-shadow; }
 
 .has-equal-height {

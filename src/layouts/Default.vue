@@ -24,7 +24,7 @@
                 rel="noopener noreferrer"
                 class="animated-link"
               ).navbar-item.is-tab {{ item.text }}
-              g-link(v-else :to="item.link").navbar-item.is-tab {{ item.text }}
+              BaseLink(v-else :to="item.link").navbar-item.is-tab {{ item.text }}
 
     div.main.container.section
       slot
